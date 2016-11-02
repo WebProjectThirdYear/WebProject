@@ -2,41 +2,59 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-    <div class="jumbotron">
-        <h1>ASP.NET</h1>
-        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
-        <p><a href="http://www.asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    <header class="jumbotron">
+        <p class="text-center">TOP RATED MOVIES</p>
+    </header>
+    <div id="owl-demo">
+        <div class="item1">
+            <img src="Images/Products/no_image.png" alt="Owl Image"></div>
+        <div class="item2">
+            <img src="Images/Products/no_image.png" alt="Owl Image"></div>
+        <div class="item3">
+            <img src="Images/Products/no_image.png" alt="Owl Image"></div>
+        <div class="item4">
+            <img src="Images/Products/no_image.png" alt="Owl Image"></div>
+        <div class="item5">
+            <img src="Images/Products/no_image.png" alt="Owl Image"></div>
+        <div class="item6">
+            <img src="Images/Products/no_image.png" alt="Owl Image"></div>
+        <div class="item7">
+            <img src="Images/Products/no_image.png" alt="Owl Image"></div>
+        <div class="item8">
+            <img src="Images/Products/no_image.png" alt="Owl Image"></div>
     </div>
+    <script src="Scripts/owl.carousel.js"></script>
+    <script>
+        $(document).ready(function () {
 
-    <div class="row">
-        <div class="col-md-4">
-            <h2>Getting started</h2>
-            <p>
-                ASP.NET Web Forms lets you build dynamic websites using a familiar drag-and-drop, event-driven model.
-            A design surface and hundreds of controls and components let you rapidly build sophisticated, powerful UI-driven sites with data access.
-            </p>
-            <p>
-                <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301948">Learn more &raquo;</a>
-            </p>
-        </div>
-        <div class="col-md-4">
-            <h2>Get more libraries</h2>
-            <p>
-                NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.
-            </p>
-            <p>
-                <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301949">Learn more &raquo;</a>
-            </p>
-        </div>
-        <div class="col-md-4">
-            <h2>Web Hosting</h2>
-            <p>
-                You can easily find a web hosting company that offers the right mix of features and price for your applications.
-            </p>
-            <p>
-                <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301950">Learn more &raquo;</a>
-            </p>
-        </div>
-    </div>
+            $("#owl-demo").owlCarousel({
+                autoPlay: 3000,
+                items: 4,
+                itemsDesktop: [1199, 3],
+                itemsDesktopSmall: [979, 3]
+            });
 
+            var randomMovieArray = ['Star Wars', 'Game of Thrones', 'Harry Potter', 'Lord of the Rings'];
+            function apiCallCarousel() {
+                // assign a random movie to each image item
+                $("img").each(function (i) {
+                    var image, title, rating;
+                    var randomNumber = Math.floor((Math.random() * randomMovieArray.length - 1) + 1);
+                    var randomMovie = randomMovieArray[randomNumber];
+                    $.getJSON('https://www.omdbapi.com/?t=' + encodeURI(randomMovie)).then(function (response) {
+                        image = response.Poster;
+                        title = response.Title;
+                        rating = response.imdbRating;                    
+                    });
+
+                    if (image !== "N/A") {
+                        $(this).attr('src', image);
+                    }
+
+                });
+            }
+            apiCallCarousel();
+
+    });
+    </script>
 </asp:Content>

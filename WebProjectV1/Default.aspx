@@ -6,26 +6,74 @@
         <p class="text-center">TOP RATED MOVIES</p>
     </header>
     <div id="owl-demo">
-        <div class="item1">
-            <img src="Images/Products/no_image.png" alt="Owl Image"></div>
-        <div class="item2">
-            <img src="Images/Products/no_image.png" alt="Owl Image"></div>
-        <div class="item3">
-            <img src="Images/Products/no_image.png" alt="Owl Image"></div>
-        <div class="item4">
-            <img src="Images/Products/no_image.png" alt="Owl Image"></div>
-        <div class="item5">
-            <img src="Images/Products/no_image.png" alt="Owl Image"></div>
-        <div class="item6">
-            <img src="Images/Products/no_image.png" alt="Owl Image"></div>
-        <div class="item7">
-            <img src="Images/Products/no_image.png" alt="Owl Image"></div>
-        <div class="item8">
-            <img src="Images/Products/no_image.png" alt="Owl Image"></div>
+        <div class="thumbnail text-center item">
+            <img class="productImage img-responsive" src="Images/Products/no_image.png" alt="Owl Image">
+            <div class="caption">
+                <h3 class="productTitle">Title</h3>
+                <p class="productPrice">€0.00</p>              
+            </div>
+            <button type="button" class="btn btn-default">BUY NOW</button>
+        </div>
+        <div class="thumbnail text-center item">
+            <img class="productImage img-responsive" src="Images/Products/no_image.png" alt="Owl Image">
+            <div class="caption">
+                <h3 class="productTitle">Title</h3>
+                <p class="productPrice">€0.00</p>              
+            </div>
+            <button type="button" class="btn btn-default">BUY NOW</button>
+        </div>  
+        <div class="thumbnail text-center item">
+            <img class="productImage img-responsive" src="Images/Products/no_image.png" alt="Owl Image">
+            <div class="caption">
+                <h3 class="productTitle">Title</h3>
+                <p class="productPrice">€0.00</p>              
+            </div>
+            <button type="button" class="btn btn-default">BUY NOW</button>
+        </div>  
+        <div class="thumbnail text-center item">
+            <img class="productImage img-responsive" src="Images/Products/no_image.png" alt="Owl Image">
+            <div class="caption">
+                <h3 class="productTitle">Title</h3>
+                <p class="productPrice">€0.00</p>
+                <button type="button" class="btn btn-default">BUY NOW</button>
+            </div>
+        </div>
+        <div class="thumbnail text-center item">
+            <img class="productImage img-responsive" src="Images/Products/no_image.png" alt="Owl Image">
+            <div class="caption">
+                <h3 class="productTitle">Title</h3>
+                <p class="productPrice">€0.00</p>
+                <button type="button" class="btn btn-default">BUY NOW</button>
+            </div>
+        </div>
+        <div class="thumbnail text-center item">
+            <img class="productImage img-responsive" src="Images/Products/no_image.png" alt="Owl Image">
+            <div class="caption">
+                <h3 class="productTitle">Title</h3>
+                <p class="productPrice">€0.00</p>
+                <button type="button" class="btn btn-default">BUY NOW</button>
+            </div>
+        </div>
+        <div class="thumbnail text-center item">
+            <img class="productImage img-responsive" src="Images/Products/no_image.png" alt="Owl Image">
+            <div class="caption">
+                <h3 class="productTitle">Title</h3>
+                <p class="productPrice">€0.00</p>
+            </div>
+            <button type="button" class="btn btn-default">BUY NOW</button>
+        </div>
+        <div class="thumbnail text-center item">
+            <img class="productImage img-responsive" src="Images/Products/no_image.png" alt="Owl Image">
+            <div class="caption">
+                <h3 class="productTitle">Title</h3>
+                <p class="productPrice">€0.00</p>
+                <button type="button" class="btn btn-default">BUY NOW</button>
+            </div>
+        </div>
     </div>
     <script src="Scripts/owl.carousel.js"></script>
     <script>
-        var randomMovieArray = ['Star Wars', 'Game of Thrones', 'Harry Potter', 'Lord of the Rings'];
+        var randomMovieArray = ['Star Wars', 'Game of Thrones', 'Harry Potter', 'Lord of the Rings', 'Indiana Jones', 'Meet The Fockers', 'Dumb and Dumber'];
 
         $("#owl-demo").owlCarousel({
             autoPlay: 3000,
@@ -34,42 +82,23 @@
             itemsDesktopSmall: [979, 3]
         });
 
-        /*function apiCallCarousel() {
-            var image, title, rating;
-            $.getJSON('https://www.omdbapi.com/?t=' + encodeURI(randomMovie)).then(function (response) {
-                $("img").each(function () {
-                    var randomNumber = Math.floor((Math.random() * randomMovieArray.length - 1) + 1);
-                    var randomMovie = randomMovieArray[randomNumber];
-
-                    image = response.Poster;
-                    title = response.Title;
-                    rating = response.imdbRating;
-
-                    if (image !== "N/A") {
-                        $(this).attr('src', image);
-                    }
-                });
-            });*/
-
         function apiCall() {
-            $("img").each(function (i) {
+            $("div.item").each(function (i) {
                 var randomNumber = Math.floor((Math.random() * randomMovieArray.length - 1) + 1);
                 var randomMovie = randomMovieArray[randomNumber];
                 (function (i) { // protects i in an immediately called function
                     $.getJSON('https://www.omdbapi.com/?t=' + encodeURI(randomMovie), function (response) {
                         image = response.Poster;
                         title = response.Title;
-                        rating = response.imdbRating;
-
-                        if (image !== "N/A") {
-                            console.log(i);
-                            $("img").eq(i).attr('src', image);
+                        
+                        $(".productTitle").eq(i).text(title);
+                        if (image !== "N/A") {                   
+                            $(".productImage").eq(i).attr('src', image);
                         }
                     });
                 })(i);
             });
         }
-
         apiCall();
                       
     </script>

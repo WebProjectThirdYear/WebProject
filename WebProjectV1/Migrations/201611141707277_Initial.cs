@@ -1,9 +1,9 @@
-namespace WebProjectV1.Migrations.ApplicationUserMigrations
+namespace WebProjectV1.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialUsers : DbMigration
+    public partial class Initial : DbMigration
     {
         public override void Up()
         {

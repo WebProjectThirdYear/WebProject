@@ -30,7 +30,7 @@ namespace WebProjectV1.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("SligoEntertainmentDB", throwIfV1Schema: false)
+            : base("StoreDB", throwIfV1Schema: false)
         {
         }
 

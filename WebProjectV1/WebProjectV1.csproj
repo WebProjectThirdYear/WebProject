@@ -182,7 +182,6 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
-    <Content Include="App_Data\StoreDB_log.ldf" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -205,7 +204,6 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
-    <Content Include="App_Data\StoreDB" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Images\Products\no_image.png" />
     <Content Include="Scripts\bootstrap.js" />
@@ -392,9 +390,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201611141707277_Initial.cs" />
-    <Compile Include="Migrations\201611141707277_Initial.Designer.cs">
-      <DependentUpon>201611141707277_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201611142005331_Initial.cs" />
+    <Compile Include="Migrations\201611142005331_Initial.Designer.cs">
+      <DependentUpon>201611142005331_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Class1.cs" />
@@ -427,10 +425,12 @@
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201611141707277_Initial.resx">
-      <DependentUpon>201611141707277_Initial.cs</DependentUpon>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201611142005331_Initial.resx">
+      <DependentUpon>201611142005331_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

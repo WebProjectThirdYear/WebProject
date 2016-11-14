@@ -171,6 +171,10 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <Content Include="App_Data\SligoEntertainmentDB.mdf" />
+    <Content Include="App_Data\SligoEntertainmentDB_log.ldf">
+      <DependentUpon>SligoEntertainmentDB.mdf</DependentUpon>
+    </Content>
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -181,7 +185,9 @@
     <Content Include="Scripts\owl.carousel.min.js" />
     <Content Include="Content\owl.theme.css" />
     <Content Include="Content\Site.css" />
-    <Content Include="Account\Web.config" />
+    <Content Include="Account\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -228,7 +234,9 @@
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Bundle.config" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
@@ -375,7 +383,22 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\ApplicationUserMigrations\201611132301029_Initial Users.cs" />
+    <Compile Include="Migrations\ApplicationUserMigrations\201611132301029_Initial Users.Designer.cs">
+      <DependentUpon>201611132301029_Initial Users.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\ApplicationUserMigrations\Configuration.cs" />
+    <Compile Include="Migrations\StoreMigrations\201611140021191_Initial.cs" />
+    <Compile Include="Migrations\StoreMigrations\201611140021191_Initial.Designer.cs">
+      <DependentUpon>201611140021191_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\StoreMigrations\Configuration.cs" />
+    <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\OrderDetails.cs" />
+    <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\StoreContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -401,8 +424,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <EmbeddedResource Include="Migrations\ApplicationUserMigrations\201611132301029_Initial Users.resx">
+      <DependentUpon>201611132301029_Initial Users.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\StoreMigrations\201611140021191_Initial.resx">
+      <DependentUpon>201611140021191_Initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

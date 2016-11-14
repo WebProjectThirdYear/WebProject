@@ -82,6 +82,7 @@
             itemsDesktopSmall: [979, 3]
         });
 
+        // pull down data from OMDb API
         function apiCall() {
             $("div.item").each(function (i) {
                 var randomNumber = Math.floor((Math.random() * randomMovieArray.length - 1) + 1);

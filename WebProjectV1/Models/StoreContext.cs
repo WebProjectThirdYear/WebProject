@@ -9,7 +9,7 @@ namespace WebProjectV1.Models
     public class StoreContext : DbContext
     {
         public StoreContext()
-            : base("DefaultConnection")
+            : base("SligoEntertainmentDB")
         {
         }
 

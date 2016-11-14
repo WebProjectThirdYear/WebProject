@@ -388,9 +388,9 @@
       <DependentUpon>201611132301029_Initial Users.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\ApplicationUserMigrations\Configuration.cs" />
-    <Compile Include="Migrations\StoreMigrations\201611140021191_Initial.cs" />
-    <Compile Include="Migrations\StoreMigrations\201611140021191_Initial.Designer.cs">
-      <DependentUpon>201611140021191_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\StoreMigrations\201611140056154_Initial.cs" />
+    <Compile Include="Migrations\StoreMigrations\201611140056154_Initial.Designer.cs">
+      <DependentUpon>201611140056154_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\StoreMigrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -427,8 +427,8 @@
     <EmbeddedResource Include="Migrations\ApplicationUserMigrations\201611132301029_Initial Users.resx">
       <DependentUpon>201611132301029_Initial Users.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\StoreMigrations\201611140021191_Initial.resx">
-      <DependentUpon>201611140021191_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\StoreMigrations\201611140056154_Initial.resx">
+      <DependentUpon>201611140056154_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

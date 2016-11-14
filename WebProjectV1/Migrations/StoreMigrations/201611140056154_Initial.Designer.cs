@@ -13,7 +13,7 @@ namespace WebProjectV1.Migrations.StoreMigrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201611140021191_Initial"; }
+            get { return "201611140056154_Initial"; }
         }
         
         string IMigrationMetadata.Source

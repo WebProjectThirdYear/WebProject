@@ -18,6 +18,6 @@ namespace WebProjectV1.Models
         public int Quantity { get; set; }
         public double UnitPrice { get; set; }
         public virtual Order order { get; set; }
-        public virtual Product product { get; set; }
+        //public virtual Product product { get; set; }
     }
 }

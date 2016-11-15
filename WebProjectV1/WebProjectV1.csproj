@@ -400,7 +400,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\OrderDetails.cs" />
-    <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\ProductOMDb.cs" />
     <Compile Include="Products.aspx.cs">
       <DependentUpon>Products.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

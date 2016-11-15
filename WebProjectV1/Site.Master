@@ -58,7 +58,7 @@
                             <span class="glyphicon glyphicon-home"></span>Home
                         </asp:HyperLink></li>
                         <li runat="server"> 
-                        <asp:HyperLink NavigateUrl="~/Default.aspx" runat="server">
+                        <asp:HyperLink NavigateUrl="~/Products.aspx" runat="server">
                             <span class="glyphicon glyphicon-cd"></span>DVDs
                         </asp:HyperLink></li>                
                         <li runat="server">

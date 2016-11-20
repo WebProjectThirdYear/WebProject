@@ -38,21 +38,23 @@ namespace WebProjectV1
                         var json = wc.DownloadString("https://www.omdbapi.com/?t=" + productName);
                         // create a new product object to parse json into
                         ProductOMDb product = new ProductOMDb(json);
+
                         // now we want to update our database with data from API
-                        SqlCommand cmd = new SqlCommand();
-                        cmd.Connection = myConnection;
-                        cmd.CommandType = CommandType.Text;
-                        cmd.CommandText = "Update Products Set Genre=@Genre,ReleaseDate=@ReleaseDate,Plot=@Plot,Rating=@Rating,Runtime=@Runtime where Id=@" + productID;
+                        string commandText = "UPDATE Products SET Genre=@Genre, Year=@Year, Plot=@Plot, Rating=@Rating, Runtime=@Runtime, Poster=@Poster Where Id =" + productID;
+                        SqlCommand cmd = new SqlCommand(commandText, myConnection);
 
                         try
                         {
                             myConnection.Open();
-                            // now update the values for the columns for that row
+                            //now update the values for the columns for that row
                             cmd.Parameters.AddWithValue("@Genre", product.Genre);
-                            cmd.Parameters.AddWithValue("@ReleaseDate", product.ReleaseDate);
+                            cmd.Parameters.AddWithValue("@Year", product.Year);
                             cmd.Parameters.AddWithValue("@Plot", product.Plot);
-                            cmd.Parameters.AddWithValue("@Rating", product.Rating);
+                            cmd.Parameters.AddWithValue("@Rating", Convert.ToDecimal(product.Rating));
                             cmd.Parameters.AddWithValue("@Runtime", product.Runtime);
+                            cmd.Parameters.AddWithValue("@Poster", product.Poster);
+                            cmd.Parameters.AddWithValue("@Id", productID);
+                            cmd.ExecuteNonQuery();
                         }
                         catch (Exception)
                         {
@@ -60,7 +62,7 @@ namespace WebProjectV1
                         }
 
                         finally
-                        {
+                        {             
                             myConnection.Close();
                         }
                     }                                       

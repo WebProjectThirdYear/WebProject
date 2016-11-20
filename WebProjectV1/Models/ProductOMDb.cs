@@ -13,7 +13,7 @@ namespace WebProjectV1.Models
     {
         public string Genre { get; set; }
 
-        public string ReleaseDate { get; set; }
+        public string Year { get; set; }
 
         public string Plot { get; set; }
 
@@ -21,14 +21,17 @@ namespace WebProjectV1.Models
 
         public string Rating { get; set; }
 
+        public string Poster { get; set; }
+
         public ProductOMDb(string json)
         {
             JObject jProduct = JObject.Parse(json);
             Genre = (string)jProduct["Genre"];
-            ReleaseDate = (string)jProduct["Year"];
+            Year = (string)jProduct["Year"];
             Plot = (string)jProduct["Plot"];
             Runtime = (string)jProduct["Runtime"];
             Rating = (string)jProduct["imdbRating"];
+            Poster = (string)jProduct["Poster"];
         }
     }
 }

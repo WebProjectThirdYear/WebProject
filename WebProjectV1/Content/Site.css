@@ -82,17 +82,18 @@ input[type="select"] {
     }
 }
 
+.thumbnail {
+    margin-right:5%;
+    height:480px;
+}
+
 /*Set width and height for images*/
-.item .productImage { 
+.thumbnail .productImage { 
     padding-top:10px;  
     width:220px;
     height:300px;
 }
 
-.thumbnail {
-    margin-right:5%;
-    height:480px;
-}
 
 
 

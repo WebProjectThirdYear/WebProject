@@ -2,18 +2,22 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
+    <header class="jumbotron">
+        <p class="text-center">OUR MOVIES</p>
+    </header>
+
     <div class="row">
         <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
             <ItemTemplate>
                 <div class="col-sm-4">
-                    <div class="thumbnail">
-                        <img src='/Images/Products/<%# Eval("Poster") %>' 
+                    <div class="thumbnail text-center">
+                        <img class="productImage" src='<%# Eval("Poster") %>' 
                             alt='<%# Eval("ProductName") %>' />
                         <div class="caption">
                             <h3><%# Eval("ProductName") %></h3>
                             <p><b>Price: <%# Eval("UnitPrice", "{0:c}") %></b>
-                            <button type="button" class="btn btn-default">BUY NOW</button>
                         </div>
+                        <button type="button" class="btn btn-default">BUY NOW</button>
                     </div>
                 </div>
             </ItemTemplate>

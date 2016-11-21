@@ -11,17 +11,27 @@ namespace WebProjectV1.Models
     // and populate the attributes
     public class ProductOMDb
     {
+        public string Name { get; set; }
+
         public string Genre { get; set; }
 
         public string Year { get; set; }
 
         public string Plot { get; set; }
 
+        public decimal UnitPrice { get; set; }
+
         public string Runtime { get; set; }
 
         public string Rating { get; set; }
 
         public string Poster { get; set; }
+
+        // default ctr
+        public ProductOMDb()
+        {
+
+        }
 
         public ProductOMDb(string json)
         {

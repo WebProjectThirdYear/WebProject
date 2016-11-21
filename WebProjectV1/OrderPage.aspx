@@ -1,6 +1,10 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="OrderPage.aspx.cs" Inherits="WebProjectV1.OrderPage" %>
 
 <asp:Content ID="mainContent" ContentPlaceHolderID="MainContent" runat="server">
+
+    <header class="jumbotron">
+        <p class="text-center">PRODUCT PAGE</p>
+    </header>
     
     <div class="row"><%-- row 1 --%>
         <div class="col-sm-8"><%-- product drop down and info column --%>
@@ -19,15 +23,18 @@
             </div>   
             <div class="form-group">
                 <div class="col-sm-12"><h4><asp:Label ID="lblName" runat="server"></asp:Label></h4></div></div>
+            <br />
             <div class="form-group">
                 <div class="col-sm-12"><asp:Label ID="lblShortDescription" runat="server"></asp:Label></div></div>
+            <br />
             <div class="form-group">
                 <div class="col-sm-12"><asp:Label ID="lblLongDescription" runat="server"></asp:Label></div></div>
+            <br />
             <div class="form-group">
                 <div class="col-sm-12"><asp:Label ID="lblUnitPrice" runat="server"></asp:Label></div></div>
         </div>
         <div class="col-sm-4"><%-- product image column --%>
-            <asp:Image ID="imgProduct" runat="server" />
+            <asp:Image ID="imgProduct" CssClass="imgProduct" runat="server" />
         </div>
     </div><%-- end of row 1 --%>
     <div class="row"><%-- row 2 --%>

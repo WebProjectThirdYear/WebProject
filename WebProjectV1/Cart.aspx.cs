@@ -11,9 +11,11 @@ namespace WebProjectV1
     public partial class Cart : System.Web.UI.Page
     {
         private CartItemList cart;
+        //--
         protected void Page_Load(object sender, EventArgs e)
         {
             cart = CartItemList.GetCart();
+            if(!IsPostBack)
             this.DisplayCart();
         }
 

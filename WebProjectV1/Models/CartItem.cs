@@ -5,17 +5,17 @@ using System.Web;
 
 namespace WebProjectV1.Models
 {
-    /*public class CartItem
+    public class CartItem
     {
         public CartItem() { }
 
-        public CartItem(Product product, int quantity)
+        public CartItem(ProductOMDb product, int quantity)
         {
             this.Product = product;
             this.Quantity = quantity;
         }
 
-        public Product Product { get; set; }
+        public ProductOMDb Product { get; set; }
         public int Quantity { get; set; }
 
         public void AddQuantity(int quantity)
@@ -32,5 +32,5 @@ namespace WebProjectV1.Models
             );
             return displayString;
         }
-    }*/
+    }
 }

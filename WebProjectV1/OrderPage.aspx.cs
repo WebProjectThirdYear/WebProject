@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Linq;
 using System.Web;
@@ -53,7 +54,30 @@ namespace WebProjectV1
 
         protected void btnAdd_Click(object sender, EventArgs e)
         {
+            if (Page.IsValid)
+            {
+                CartItemList cart = CartItemList.GetCart();
+                CartItem cartItem = cart[selectedProduct.Id];
 
+                //if item isn’t in cart, add it; otherwise, increase its quantity
+                if (cartItem == null)
+                {
+                    cart.AddItem(selectedProduct,
+                                 Convert.ToInt32(txtQuantity.Text));
+                }
+                else
+                {
+                    cartItem.AddQuantity(Convert.ToInt32(txtQuantity.Text));
+                }
+                Response.Redirect("Cart.aspx");
+            }
+        }
+
+        protected void btnCart_Click(object sender, EventArgs e)
+        {
+            string url = ConfigurationManager.AppSettings["SecurePath"] +
+               "CheckOut1.aspx";
+            Response.Redirect(url);
         }
     }
-}
+    }

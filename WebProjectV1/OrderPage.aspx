@@ -3,7 +3,7 @@
 <asp:Content ID="mainContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <header class="jumbotron">
-        <p class="text-center">PRODUCT PAGE</p>
+        <p class="text-center">ORDER PAGE</p>
     </header>
     
     <div class="row"><%-- row 1 --%>
@@ -58,7 +58,7 @@
                     <asp:Button ID="btnAdd" runat="server" Text="Add to Cart" 
                         onclick="btnAdd_Click" CssClass="btn btn-default" />
                     <asp:Button ID="btnCart" runat="server" Text="Go to Cart" 
-                        PostBackUrl="~/Cart.aspx" CausesValidation="False" CssClass="btn btn-default" />
+                        PostBackUrl="~/Cart.aspx" CausesValidation="False" CssClass="btn btn-default" OnClick="btnCart_Click" />
                 </div>
             </div>
         </div>

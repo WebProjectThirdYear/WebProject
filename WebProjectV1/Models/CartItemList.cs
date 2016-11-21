@@ -5,7 +5,7 @@ using System.Web;
 
 namespace WebProjectV1.Models
 {
-    /*public class CartItemList
+    public class CartItemList
     {
         private List<CartItem> cartItems;
 
@@ -25,12 +25,12 @@ namespace WebProjectV1.Models
             set { cartItems[index] = value; }
         }
 
-        public CartItem this[string id]
+        public CartItem this[string Id]
         {
             get
             {
                 foreach (CartItem c in cartItems)
-                    if (c.Product.ProductID == id) return c;
+                    if (c.Product.Id == Id) return c;
                 return null;
             }
         }
@@ -43,7 +43,7 @@ namespace WebProjectV1.Models
             return (CartItemList)HttpContext.Current.Session["Cart"];
         }
 
-        public void AddItem(Products product, int quantity)
+        public void AddItem(ProductOMDb product, int quantity)
         {
             CartItem c = new CartItem(product, quantity);
             cartItems.Add(c);
@@ -58,6 +58,6 @@ namespace WebProjectV1.Models
         {
             cartItems.Clear();
         }
-    }*/
+    }
 
 }

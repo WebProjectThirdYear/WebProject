@@ -11,6 +11,7 @@ namespace WebProjectV1.Models
     // and populate the attributes
     public class ProductOMDb
     {
+        public string Id { get; set; }
         public string Name { get; set; }
 
         public string Genre { get; set; }

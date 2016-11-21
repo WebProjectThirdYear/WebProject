@@ -82,6 +82,11 @@ input[type="select"] {
     }
 }
 
+.lblProdName {
+    font-size:18px;
+    font-weight:bold;
+}
+
 .thumbnail {
     margin-right:5%;
     height:480px;

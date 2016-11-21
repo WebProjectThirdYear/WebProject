@@ -62,10 +62,10 @@ namespace WebProjectV1
                         }
 
                         finally
-                        {             
+                        {
                             myConnection.Close();
                         }
-                    }                                       
+                    }
                 }
             }
         }
@@ -100,7 +100,7 @@ namespace WebProjectV1
                 myConnection.Close();
             }
 
-            
+
         }
 
         // method to retrieve a specific row from a column in a table from the database
@@ -133,7 +133,30 @@ namespace WebProjectV1
                 myConnection.Close();
             }
         }
-    }
 
-    
+        protected void btnAdd_Click(object sender, EventArgs e)
+        {
+            if (Page.IsValid)
+            {
+                // get cart from session and selected item from cart
+                /*CartItemList cart = CartItemList.GetCart();
+                CartItem cartItem = cart[selectedProduct.ProductID];
+
+                // if item isn’t in cart, add it; otherwise, increase its quantity
+                if (cartItem == null)
+                {
+                    cart.AddItem(selectedProduct,
+                                 Convert.ToInt32(txtQuantity.Text));
+                }
+                else
+                {
+                    cartItem.AddQuantity(Convert.ToInt32(txtQuantity.Text));
+                }
+                Response.Redirect("Cart.aspx");
+            }*/
+            }
+
+
+        }
+    }
 }

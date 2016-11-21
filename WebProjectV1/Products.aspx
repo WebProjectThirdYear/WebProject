@@ -11,13 +11,13 @@
             <ItemTemplate>
                 <div class="col-sm-4">
                     <div class="thumbnail text-center">
-                        <img class="productImage" src='<%# Eval("Poster") %>' 
-                            alt='<%# Eval("ProductName") %>' />
+                        <a href="#"><img class="productImage" runat="server" src='<%# Eval("Poster") %>' 
+                            alt='<%# Eval("ProductName") %>' /></a>
                         <div class="caption">
-                            <h3><%# Eval("ProductName") %></h3>
+                            <a href="#"><h3 id="prodName" runat="server"><%# Eval("ProductName") %></h3></a>
                             <p><b>Price: <%# Eval("UnitPrice", "{0:c}") %></b>
                         </div>
-                        <button type="button" class="btn btn-default">BUY NOW</button>
+                        <asp:Button ID="btnAdd" type="button" CssClass="btn btn-default" runat="server" OnClick="btnAdd_Click" Text="BUY NOW"></asp:Button>
                     </div>
                 </div>
             </ItemTemplate>

@@ -12,6 +12,7 @@ namespace WebProjectV1.Models
     public class ProductOMDb
     {
         public string Id { get; set; }
+
         public string Name { get; set; }
 
         public string Genre { get; set; }

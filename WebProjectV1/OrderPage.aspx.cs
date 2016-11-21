@@ -43,6 +43,7 @@ namespace WebProjectV1
 
             // create a new product object and load with data from row
             ProductOMDb p = new ProductOMDb();
+            p.Id = row["Id"].ToString();
             p.Name = row["ProductName"].ToString();
             p.Genre = row["Genre"].ToString();
             p.Plot = row["Plot"].ToString();

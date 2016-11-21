@@ -1,6 +1,11 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Cart.aspx.cs" Inherits="WebProjectV1.Cart" %>
 
 <asp:Content ID="mainContent" ContentPlaceHolderID="MainContent" runat="server">
+
+     <header class="jumbotron">
+        <p class="text-center">MY CART</p>
+    </header>
+
     <div class="row"><%-- row 1 --%>
         <div class="col-sm-6"><%-- cart display column --%>
             <div class="form-group">

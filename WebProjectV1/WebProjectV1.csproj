@@ -189,6 +189,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\owl.carousel.css" />
+    <Content Include="OrderPage.aspx" />
     <Content Include="ProductDetails.aspx" />
     <Content Include="Products.aspx" />
     <Content Include="Scripts\owl.carousel.js" />
@@ -402,6 +403,13 @@
     <Compile Include="Models\CartItemList.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ProductOMDb.cs" />
+    <Compile Include="OrderPage.aspx.cs">
+      <DependentUpon>OrderPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OrderPage.aspx.designer.cs">
+      <DependentUpon>OrderPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ProductDetails.aspx.cs">
       <DependentUpon>ProductDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

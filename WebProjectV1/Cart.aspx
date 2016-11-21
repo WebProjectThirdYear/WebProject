@@ -3,7 +3,7 @@
 <asp:Content ID="mainContent" ContentPlaceHolderID="MainContent" runat="server">
 
      <header class="jumbotron">
-        <p class="text-center">MY CART</p>
+        <p class="text-center">SHOPPING CART</p>
     </header>
 
     <div class="row"><%-- row 1 --%>

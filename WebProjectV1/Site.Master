@@ -60,7 +60,11 @@
                         <li runat="server"> 
                         <asp:HyperLink NavigateUrl="~/Products.aspx" runat="server">
                             <span class="glyphicon glyphicon-cd"></span>DVDs
-                        </asp:HyperLink></li>                
+                        </asp:HyperLink></li>   
+                        <li runat="server">   
+                        <asp:HyperLink NavigateUrl="~/OrderPage.aspx" runat="server">
+                            <span class="glyphicon glyphicon-euro"></span>Order
+                        </asp:HyperLink></li>      
                         <li runat="server">
                         <asp:HyperLink NavigateUrl="~/Contact.aspx" runat="server">
                             <span class="glyphicon glyphicon-earphone"></span>Contact Us

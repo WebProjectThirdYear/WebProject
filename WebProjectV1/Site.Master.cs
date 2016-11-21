@@ -7,6 +7,7 @@ using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Microsoft.AspNet.Identity;
+using WebProjectV1.Models;
 
 namespace WebProjectV1
 {
@@ -75,6 +76,11 @@ namespace WebProjectV1
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)
         {
             Context.GetOwinContext().Authentication.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
+        }
+
+        protected void Page_PreRender(object sender,EventArgs e)
+        {
+            spanCount.InnerText = CartItemList.GetCart().Count.ToString();
         }
     }
 

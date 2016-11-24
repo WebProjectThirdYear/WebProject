@@ -100,8 +100,12 @@ input[type="select"] {
 }
 
 .imgProduct {
-    width:220px;
-    height:300px;
+    width:290px;
+    height:370px;
+}
+
+label {
+
 }
 
 

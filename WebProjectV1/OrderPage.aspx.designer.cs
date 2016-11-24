@@ -40,22 +40,22 @@ namespace WebProjectV1 {
         protected global::System.Web.UI.WebControls.Label lblName;
         
         /// <summary>
-        /// lblShortDescription control.
+        /// lblGenre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblShortDescription;
+        protected global::System.Web.UI.WebControls.Label lblGenre;
         
         /// <summary>
-        /// lblLongDescription control.
+        /// lblPlot control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblLongDescription;
+        protected global::System.Web.UI.WebControls.Label lblPlot;
         
         /// <summary>
         /// lblUnitPrice control.

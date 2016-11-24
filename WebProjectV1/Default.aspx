@@ -15,7 +15,7 @@
                         <h3><%# Eval("ProductName") %></h3>
                         <p><b>Price: <%# Eval("UnitPrice", "{0:c}") %></b>
                     </div>
-                    <button type="button" class="btn btn-default">BUY NOW</button>
+                    <asp:Button ID="btnAdd" type="button" CssClass="btn btn-default" runat="server" PostBackUrl="~/OrderPage.aspx" Text="BUY NOW"></asp:Button>
                 </div>
             </ItemTemplate>
         </asp:Repeater>

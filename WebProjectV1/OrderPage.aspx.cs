@@ -25,8 +25,10 @@ namespace WebProjectV1
             // get and show product data on every load
             selectedProduct = this.GetSelectedProduct();
             lblName.Text = selectedProduct.Name;
-            lblShortDescription.Text = selectedProduct.Genre;
-            lblLongDescription.Text = selectedProduct.Plot;
+            lblGenre.Text = selectedProduct.Genre;
+            lblPlot.Text = selectedProduct.Plot;
+            //lblRuntime.Text = selectedProduct.Runtime;
+            //lblYear.Text = selectedProduct.Year;
             lblUnitPrice.Text = selectedProduct.UnitPrice.ToString("c") + " each";
             imgProduct.ImageUrl = selectedProduct.Poster;
 

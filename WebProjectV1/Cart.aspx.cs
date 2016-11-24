@@ -16,7 +16,12 @@ namespace WebProjectV1
         {
             cart = CartItemList.GetCart();
             if(!IsPostBack)
-            this.DisplayCart();
+            {
+                this.DisplayCart();
+                CartCount();
+            }
+
+            
         }
 
         private void DisplayCart()
@@ -45,6 +50,9 @@ namespace WebProjectV1
                     lblMessage.Text = "Select the item you want to remove";
                 }
             }
+
+            CartCount();
+            
         }
 
         protected void btnEmpty_Click(object sender, EventArgs e)
@@ -54,6 +62,28 @@ namespace WebProjectV1
                 cart.Clear();
                 lstCart.Items.Clear();
             }
+            CartCount();
+        }
+
+        public void CartCount()
+        {
+            if (cart.Count == 0)
+            {
+                btnRemove.Enabled = false;
+                btnEmpty.Enabled = false;
+                btnCheckOut.Enabled = false;
+            }
+            else
+            {
+                btnRemove.Enabled = true;
+                btnEmpty.Enabled = true;
+                btnCheckOut.Enabled = true;
+            }
+        }
+
+        protected void btnCheckOut_Click(object sender, EventArgs e)
+        {
+            CartCount();
         }
     }
 }

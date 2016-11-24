@@ -49,13 +49,22 @@ namespace WebProjectV1 {
         protected global::System.Web.UI.WebControls.Label lblGenre;
         
         /// <summary>
-        /// lblPlot control.
+        /// lblRuntime control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPlot;
+        protected global::System.Web.UI.WebControls.Label lblRuntime;
+        
+        /// <summary>
+        /// lblYear control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblYear;
         
         /// <summary>
         /// lblUnitPrice control.
@@ -65,6 +74,15 @@ namespace WebProjectV1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblUnitPrice;
+        
+        /// <summary>
+        /// lblPlot control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPlot;
         
         /// <summary>
         /// imgProduct control.

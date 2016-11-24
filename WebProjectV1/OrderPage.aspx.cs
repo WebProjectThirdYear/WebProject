@@ -27,8 +27,8 @@ namespace WebProjectV1
             lblName.Text = selectedProduct.Name;
             lblGenre.Text = selectedProduct.Genre;
             lblPlot.Text = selectedProduct.Plot;
-            //lblRuntime.Text = selectedProduct.Runtime;
-            //lblYear.Text = selectedProduct.Year;
+            lblRuntime.Text = selectedProduct.Runtime;
+            lblYear.Text = selectedProduct.Year;
             lblUnitPrice.Text = selectedProduct.UnitPrice.ToString("c") + " each";
             imgProduct.ImageUrl = selectedProduct.Poster;
 
@@ -49,6 +49,8 @@ namespace WebProjectV1
             p.Name = row["ProductName"].ToString();
             p.Genre = row["Genre"].ToString();
             p.Plot = row["Plot"].ToString();
+            p.Runtime = row["Runtime"].ToString();
+            p.Year = row["Year"].ToString();
             p.Rating= row["Rating"].ToString();
             p.UnitPrice = (decimal)row["UnitPrice"];
             p.Poster = row["Poster"].ToString();
@@ -72,7 +74,7 @@ namespace WebProjectV1
                 {
                     cartItem.AddQuantity(Convert.ToInt32(txtQuantity.Text));
                 }
-                Response.Redirect("Cart.aspx");
+                Response.Redirect("OrderPage.aspx");
             }
         }
 

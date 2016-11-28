@@ -33,7 +33,7 @@
                     <asp:Button ID="btnContinue" runat="server"
                         PostBackUrl="~/OrderPage.aspx" Text="Continue Shopping" CssClass="btn btn-default" />
                     <asp:Button ID="btnCheckOut" runat="server" Text="Check Out" PostBackUrl="~/CheckOut1.aspx"  
-                         CssClass="btn btn-default" OnClick="btnCheckOut_Click" />
+                         CssClass="btn btn-default" />
                 </div>
             </div>
         </div>

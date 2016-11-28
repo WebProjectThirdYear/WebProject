@@ -102,11 +102,11 @@
     <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
             <asp:Button ID="btnCheckOut" runat="server" Text="Continue Checkout" 
-                CssClass="btn" OnClick="btnCheckOut_Click" />
+                CssClass="btn" />
             <asp:Button ID="btnCancel" runat="server" Text="Cancel Order" 
-                CausesValidation="False" CssClass="btn" OnClick="btnCancel_Click" />
+                CausesValidation="False" CssClass="btn"  />
             <asp:Button ID="btnContinue" runat="server" Text="Continue Shopping" 
-                CausesValidation="False" CssClass="btn" OnClick="btnContinue_Click"/>
+                CausesValidation="False" CssClass="btn" />
         </div>
     </div>
 </asp:Content>

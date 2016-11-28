@@ -38,7 +38,16 @@ namespace WebProjectV1.Account
                 switch (result)
                 {
                     case SignInStatus.Success:
-                        IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
+                        if (Session["UserCheckOut"] != null)
+                        {
+                            Session["UserCheckOut"] = true;
+                            Response.Redirect("../CheckOut1.aspx");
+                        }
+                        else
+                        {
+                            IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
+                        }
+                       
                         break;
                     case SignInStatus.LockedOut:
                         Response.Redirect("/Account/Lockout");

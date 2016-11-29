@@ -20,5 +20,20 @@ namespace WebProjectV1
                 Response.Redirect("Account/Login.aspx");
             }
         }
+
+        protected void btnCheckOut_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnCancel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnContinue_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

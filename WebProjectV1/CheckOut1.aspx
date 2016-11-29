@@ -2,7 +2,6 @@
 
 <asp:Content ContentPlaceHolderID="MainContent" runat="server">
     <h1>Check Out Page</h1>
-
     <div class="form-group">
         <label class="control-label col-sm-2">First Name:</label>
         <div class="col-sm-5">
@@ -102,11 +101,11 @@
     <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
             <asp:Button ID="btnCheckOut" runat="server" Text="Continue Checkout" 
-                CssClass="btn" />
+                CssClass="btn" OnClick="btnCheckOut_Click" />
             <asp:Button ID="btnCancel" runat="server" Text="Cancel Order" 
-                CausesValidation="False" CssClass="btn"  />
+                CausesValidation="False" CssClass="btn" OnClick="btnCancel_Click" />
             <asp:Button ID="btnContinue" runat="server" Text="Continue Shopping" 
-                CausesValidation="False" CssClass="btn" />
+                CausesValidation="False" CssClass="btn" OnClick="btnContinue_Click"/>
         </div>
     </div>
 </asp:Content>

@@ -184,6 +184,8 @@
     <Content Include="Account\VerifyPhoneNumber.aspx" />
     <Content Include="Cart.aspx" />
     <Content Include="CheckOut1.aspx" />
+    <Content Include="CheckOut2.aspx" />
+    <Content Include="Confirmation.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-superhero.min.css" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -391,6 +393,20 @@
     </Compile>
     <Compile Include="CheckOut1.aspx.designer.cs">
       <DependentUpon>CheckOut1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CheckOut2.aspx.cs">
+      <DependentUpon>CheckOut2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CheckOut2.aspx.designer.cs">
+      <DependentUpon>CheckOut2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Confirmation.aspx.cs">
+      <DependentUpon>Confirmation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Confirmation.aspx.designer.cs">
+      <DependentUpon>Confirmation.aspx</DependentUpon>
     </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>

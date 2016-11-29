@@ -32,8 +32,8 @@
                 <div class="col-sm-12">
                     <asp:Button ID="btnContinue" runat="server"
                         PostBackUrl="~/OrderPage.aspx" Text="Continue Shopping" CssClass="btn btn-default" />
-                    <asp:Button ID="btnCheckOut" runat="server" Text="Check Out" PostBackUrl="~/CheckOut1.aspx"  
-                         CssClass="btn btn-default" />
+                    <asp:Button ID="btnCheckOut" runat="server" Text="Check Out"  
+                         CssClass="btn btn-default" OnClick="btnCheckOut_Click" />
                 </div>
             </div>
         </div>

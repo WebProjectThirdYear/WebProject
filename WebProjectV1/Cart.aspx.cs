@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNet.Identity.Owin;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -80,6 +81,12 @@ namespace WebProjectV1
                 btnEmpty.Enabled = true;
                 btnCheckOut.Enabled = true;
             }
+        }
+
+        protected void btnCheckOut_Click(object sender, EventArgs e)
+        {
+            string url = ConfigurationManager.AppSettings["SecurePath"] + "CheckOut1.aspx";
+            Response.Redirect(url);
         }
     }
 }

@@ -429,9 +429,14 @@
     <Compile Include="Migrations\201611142005331_Initial.Designer.cs">
       <DependentUpon>201611142005331_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201612051355361_added new customer columns.cs" />
+    <Compile Include="Migrations\201612051355361_added new customer columns.Designer.cs">
+      <DependentUpon>201612051355361_added new customer columns.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CartItem.cs" />
     <Compile Include="Models\CartItemList.cs" />
+    <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ProductOMDb.cs" />
     <Compile Include="OrderPage.aspx.cs">
@@ -478,6 +483,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201611142005331_Initial.resx">
       <DependentUpon>201611142005331_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612051355361_added new customer columns.resx">
+      <DependentUpon>201612051355361_added new customer columns.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

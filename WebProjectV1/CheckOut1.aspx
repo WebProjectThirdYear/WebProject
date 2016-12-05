@@ -108,4 +108,5 @@
                 CausesValidation="False" CssClass="btn" OnClick="btnContinue_Click"/>
         </div>
     </div>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:SligoEntertainmentDBConnectionString %>" SelectCommand="SELECT * FROM [AspNetUsers]"></asp:SqlDataSource>
 </asp:Content>

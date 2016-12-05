@@ -58,6 +58,18 @@ namespace WebProjectV1.Models
         {
             cartItems.Clear();
         }
+
+        public decimal TotalCost()
+        {
+            decimal totalCost = 0;
+
+            foreach (var item in cartItems)
+            {
+                totalCost += (item.Product.UnitPrice * item.Quantity);
+            }
+
+            return totalCost;
+        }
     }
 
 }

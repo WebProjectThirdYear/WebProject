@@ -28,6 +28,10 @@
                 <asp:Label ID="lblMessage" runat="server" EnableViewState="False"
                     CssClass="text-info col-sm-12"></asp:Label>
             </div>
+            <div class="form-group"><%-- message label --%>
+                <asp:Label ID="lblTotalCost" runat="server"
+                    CssClass="text-info col-sm-12"></asp:Label>
+            </div>
             <div class="form-group"><%-- buttons --%>
                 <div class="col-sm-12">
                     <asp:Button ID="btnContinue" runat="server"

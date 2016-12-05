@@ -17,13 +17,15 @@ namespace WebProjectV1
         protected void Page_Load(object sender, EventArgs e)
         {
             cart = CartItemList.GetCart();
+
+            // get total cost for all items in cart
+            lblTotalCost.Text = string.Format("Total Cost: {0:C}",cart.TotalCost());
+
             if(!IsPostBack)
             {
                 this.DisplayCart();
                 CartCount();
-            }
-
-            
+            }            
         }
 
         private void DisplayCart()

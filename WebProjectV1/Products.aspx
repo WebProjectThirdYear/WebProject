@@ -17,7 +17,7 @@
                             <a href="#"><h3 id="prodName" runat="server"><%# Eval("ProductName") %></h3></a>
                             <p><b>Price: <%# Eval("UnitPrice", "{0:c}") %></b>
                         </div>
-                        <asp:Button ID="btnAdd" type="button" CssClass="btn btn-default" runat="server" PostBackUrl="~/OrderPage.aspx" Text="BUY NOW"></asp:Button>
+                        <asp:Button ID="btnAdd" type="button" CssClass="btn btn-primary" runat="server" PostBackUrl="~/OrderPage.aspx" Text="BUY NOW"></asp:Button>
                     </div>
                 </div>
             </ItemTemplate>

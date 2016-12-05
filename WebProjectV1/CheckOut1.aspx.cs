@@ -14,7 +14,7 @@ namespace WebProjectV1
     public partial class CheckOut1 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {           
+        {
             if (!User.Identity.IsAuthenticated) // check if user is not logged in
             {
                 bool userLoggedIn = false;
@@ -37,12 +37,14 @@ namespace WebProjectV1
             }*/
 
             // get customer details about the logged in User
+            Customer cust = new Customer();
             DataView aspUserTable = (DataView)
                 SqlDataSource1.Select(DataSourceSelectArguments.Empty);
-            
+            //aspUserTable.RowFilter = 
+            //    "Email = '" + User.Identity.Name;   
             DataRowView row = aspUserTable[0];
 
-            Customer cust = new Customer();
+           
             cust.FirstName = row["FirstName"].ToString();
             cust.Surname = row["Surname"].ToString();
             cust.DOB = (DateTime)row["DOB"];
@@ -56,27 +58,25 @@ namespace WebProjectV1
 
             txtFirstName.Text = cust.FirstName;
             txtLastName.Text = cust.Surname;
+            txtEmail.Text = User.Identity.Name;
             txtAddress.Text = cust.AddressLine1;
-
-
+            txtAddress2.Text = cust.AddressLine2;
+            txtAddress3.Text = cust.AddressLine3;
+            txtCity.Text = cust.City;
+            DropDownCountys.SelectedValue = cust.County;
 
         }
 
         protected void btnCheckOut_Click(object sender, EventArgs e)
         {
-
+            string url = ConfigurationManager.AppSettings["SecurePath"] + "CheckOut2.aspx";
+            Response.Redirect(url);
         }
 
         protected void btnCancel_Click(object sender, EventArgs e)
         {
             Session.Remove("Cart");
             string url = ConfigurationManager.AppSettings["UnSecurePath"] + "OrderPage.aspx";
-            Response.Redirect(url);
-        }
-
-        protected void btnContinue_Click(object sender, EventArgs e)
-        {
-            string url = ConfigurationManager.AppSettings["SecurePath"] + "CheckOut2.aspx";
             Response.Redirect(url);
         }
     }

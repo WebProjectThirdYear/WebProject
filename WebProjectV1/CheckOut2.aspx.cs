@@ -21,7 +21,8 @@ namespace WebProjectV1
 
         protected void btnAccept_Click(object sender, EventArgs e)
         {
-
+            string url = ConfigurationManager.AppSettings["UnSecurePath"] + "Confirmation.aspx";
+            Response.Redirect(url);
         }
 
         protected void btnCancel_Click(object sender, EventArgs e)
@@ -30,12 +31,6 @@ namespace WebProjectV1
             Session.Remove("Customer");
             Session.Remove("UserCheckOut");
             string url = ConfigurationManager.AppSettings["UnSecurePath"] + "OrderPage.aspx";
-            Response.Redirect(url);
-        }
-
-        protected void btnContinue_Click(object sender, EventArgs e)
-        {
-            string url = ConfigurationManager.AppSettings["UnSecurePath"] + "Confirmation.aspx";
             Response.Redirect(url);
         }
     }

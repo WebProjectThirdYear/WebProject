@@ -63,8 +63,6 @@
                 CssClass="btn" OnClick="btnAccept_Click" />
             <asp:Button ID="btnCancel" runat="server" Text="Cancel Order" 
                 CausesValidation="False" CssClass="btn" OnClick="btnCancel_Click" />
-            <asp:Button ID="btnContinue" runat="server" Text="Continue Shopping" 
-                 CausesValidation="False" CssClass="btn" OnClick="btnContinue_Click" />
         </div>
     </div>
 </asp:Content>

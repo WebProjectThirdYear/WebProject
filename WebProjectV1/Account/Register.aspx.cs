@@ -11,11 +11,12 @@ namespace WebProjectV1.Account
 {
     public partial class Register : Page
     {
+
         protected void CreateUser_Click(object sender, EventArgs e)
         {
             var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
             var signInManager = Context.GetOwinContext().Get<ApplicationSignInManager>();
-            var user = new ApplicationUser() { UserName = Email.Text, Email = Email.Text };
+            var user = new ApplicationUser() { UserName = Email.Text, Email = Email.Text, FirstName = FirstName.Text, Surname = Surname.Text, DOB = Convert.ToDateTime(DOB.Text), AddressLine1 =Address1.Text, AddressLine2 = Address2.Text, AddressLine3 = Address3.Text, City = City.Text, County = DropDownCountys.SelectedValue };
             IdentityResult result = manager.Create(user, Password.Text);
             if (result.Succeeded)
             {

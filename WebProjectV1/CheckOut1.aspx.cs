@@ -17,6 +17,8 @@ namespace WebProjectV1
             {
                 bool userLoggedIn = false;
 
+                // start a session to say user hasn't logged in yet
+                // redirect them to login page
                 Session["UserCheckOut"] = userLoggedIn;
                 Response.Redirect("Account/Login.aspx");
             }

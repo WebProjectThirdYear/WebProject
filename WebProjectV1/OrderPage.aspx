@@ -27,23 +27,23 @@
                     <asp:Label ID="lblName" runat="server"></asp:Label></h4>
             </div>
             <div class="col-sm-12">
-                <label class="col-sm-3">Genre:</label>
+                <label class="col-sm-3 lblProduct">Genre:</label>
                 <asp:Label CssClass="co-sm-9" ID="lblGenre" runat="server"></asp:Label>
             </div>
             <div class="col-sm-12">
-                <label class="col-sm-3">Runtime:</label>
+                <label class="col-sm-3 lblProduct">Runtime:</label>
                 <asp:Label CssClass="co-sm-9" ID="lblRuntime" runat="server"></asp:Label>
             </div>
             <div class="col-sm-12">
-                <label class="col-sm-3">Year:</label>
+                <label class="col-sm-3 lblProduct">Year:</label>
                 <asp:Label CssClass="co-sm-9" ID="lblYear" runat="server"></asp:Label>
             </div>
             <div class="col-sm-12">
-                <label class="col-sm-3">Unit Price:</label>
+                <label class="col-sm-3 lblProduct">Unit Price:</label>
                 <asp:Label CssClass="co-sm-9" ID="lblUnitPrice" runat="server"></asp:Label>
             </div>
             <div class="col-sm-12">
-                <label class="col-sm-3">Plot:</label>
+                <label class="col-sm-3 lblProduct">Plot:</label>
                 <asp:Label CssClass="co-sm-9" ID="lblPlot" runat="server"></asp:Label>
             </div>
         </div>

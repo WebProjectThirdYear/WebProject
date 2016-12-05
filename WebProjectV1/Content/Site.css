@@ -104,6 +104,12 @@ input[type="select"] {
     height:370px;
 }
 
+/*Labels for products on order page*/
+.lblProduct
+{
+    font-size:13px;;
+}
+
 
 
 

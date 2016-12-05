@@ -21,7 +21,7 @@
         </asp:Repeater>
     </div>
 
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:SligoEntertainmentDBConnectionString %>" DeleteCommand="DELETE FROM [Products] WHERE [Id] = @Id" InsertCommand="INSERT INTO [Products] ([ProductName], [Genre], [UnitPrice], [Plot], [Rating], [Runtime], [Poster], [Year]) VALUES (@ProductName, @Genre, @UnitPrice, @Plot, @Rating, @Runtime, @Poster, @Year)" SelectCommand="SELECT * FROM [Products]" UpdateCommand="UPDATE [Products] SET [ProductName] = @ProductName, [Genre] = @Genre, [UnitPrice] = @UnitPrice, [Plot] = @Plot, [Rating] = @Rating, [Runtime] = @Runtime, [Poster] = @Poster, [Year] = @Year WHERE [Id] = @Id">
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:SligoEntertainmentDBConnectionString %>" DeleteCommand="DELETE FROM [Products] WHERE [Id] = @Id" InsertCommand="INSERT INTO [Products] ([ProductName], [Genre], [UnitPrice], [Plot], [Rating], [Runtime], [Poster], [Year]) VALUES (@ProductName, @Genre, @UnitPrice, @Plot, @Rating, @Runtime, @Poster, @Year)" SelectCommand="SELECT * FROM [Products] WHERE ([Rating] &gt;= @Rating)" UpdateCommand="UPDATE [Products] SET [ProductName] = @ProductName, [Genre] = @Genre, [UnitPrice] = @UnitPrice, [Plot] = @Plot, [Rating] = @Rating, [Runtime] = @Runtime, [Poster] = @Poster, [Year] = @Year WHERE [Id] = @Id">
         <DeleteParameters>
             <asp:Parameter Name="Id" Type="Int32" />
         </DeleteParameters>
@@ -35,6 +35,9 @@
             <asp:Parameter Name="Poster" Type="String" />
             <asp:Parameter Name="Year" Type="String" />
         </InsertParameters>
+        <SelectParameters>
+            <asp:Parameter DefaultValue="7" Name="Rating" Type="Decimal" />
+        </SelectParameters>
         <UpdateParameters>
             <asp:Parameter Name="ProductName" Type="String" />
             <asp:Parameter Name="Genre" Type="String" />

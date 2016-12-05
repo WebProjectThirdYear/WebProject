@@ -39,7 +39,7 @@
     </div>
 
     <div class="form-group">
-        <label class="control-label col-sm-2">Address</label>
+        <label class="control-label col-sm-2">Address1</label>
         <div class="col-sm-5">
             <asp:TextBox ID="txtAddress" runat="server" CssClass="form-control"></asp:TextBox>
         </div>
@@ -47,6 +47,19 @@
             <asp:RequiredFieldValidator ID="rfvAddress" runat="server" 
                 ErrorMessage="Required" CssClass="text-danger" 
                 Display="Dynamic" ControlToValidate="txtAddress"></asp:RequiredFieldValidator> 
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2">Address 2</label>
+        <div class="col-sm-5">
+            <asp:TextBox ID="txtAddress2" runat="server" CssClass="form-control"></asp:TextBox>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-sm-2">Address 3</label>
+        <div class="col-sm-5">
+            <asp:TextBox ID="txtAddress3" runat="server" CssClass="form-control"></asp:TextBox>
         </div>
     </div>
 
@@ -63,26 +76,9 @@
     </div>
 
     <div class="form-group">
-        <label class="control-label col-sm-2">State</label>
+        <label class="control-label col-sm-2">County</label>
         <div class="col-sm-5">
-            <asp:TextBox ID="txtState" runat="server" CssClass="form-control"></asp:TextBox>
-        </div>
-        <div class="col-sm-5">
-            <asp:RequiredFieldValidator ID="rfvState" runat="server" 
-                ErrorMessage="Required" CssClass="text-danger" 
-                Display="Dynamic" ControlToValidate="txtState"></asp:RequiredFieldValidator> 
-        </div>
-    </div>
-
-    <div class="form-group">
-        <label class="control-label col-sm-2">Zip Code</label>
-        <div class="col-sm-5">
-            <asp:TextBox ID="txtZip" runat="server" CssClass="form-control"></asp:TextBox>
-        </div>
-        <div class="col-sm-5">
-            <asp:RequiredFieldValidator ID="rfvZip" runat="server" 
-                ErrorMessage="Required" CssClass="text-danger" 
-                Display="Dynamic" ControlToValidate="txtZip"></asp:RequiredFieldValidator> 
+            <asp:DropDownList ID="DropDownCountys" runat="server" ForeColor="Black" Font-Bold="true" Width="280" Height="40" DataSourceID="SqlDataSource2" DataTextField="CountyName" DataValueField="Id"></asp:DropDownList>
         </div>
     </div>
 
@@ -104,9 +100,8 @@
                 CssClass="btn" OnClick="btnCheckOut_Click" />
             <asp:Button ID="btnCancel" runat="server" Text="Cancel Order" 
                 CausesValidation="False" CssClass="btn" OnClick="btnCancel_Click" />
-            <asp:Button ID="btnContinue" runat="server" Text="Continue Shopping" 
-                CausesValidation="False" CssClass="btn" OnClick="btnContinue_Click"/>
         </div>
     </div>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:SligoEntertainmentDBConnectionString %>" SelectCommand="SELECT * FROM [AspNetUsers]"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:SligoEntertainmentDBConnectionString %>" SelectCommand="SELECT * FROM [County]"></asp:SqlDataSource>
 </asp:Content>

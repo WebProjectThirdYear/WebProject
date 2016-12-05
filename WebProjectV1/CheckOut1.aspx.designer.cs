@@ -85,6 +85,24 @@ namespace WebProjectV1 {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvAddress;
         
         /// <summary>
+        /// txtAddress2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtAddress2;
+        
+        /// <summary>
+        /// txtAddress3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtAddress3;
+        
+        /// <summary>
         /// txtCity control.
         /// </summary>
         /// <remarks>
@@ -103,40 +121,13 @@ namespace WebProjectV1 {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCity;
         
         /// <summary>
-        /// txtState control.
+        /// DropDownCountys control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtState;
-        
-        /// <summary>
-        /// rfvState control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvState;
-        
-        /// <summary>
-        /// txtZip control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtZip;
-        
-        /// <summary>
-        /// rfvZip control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvZip;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownCountys;
         
         /// <summary>
         /// txtPhone control.
@@ -175,15 +166,6 @@ namespace WebProjectV1 {
         protected global::System.Web.UI.WebControls.Button btnCancel;
         
         /// <summary>
-        /// btnContinue control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnContinue;
-        
-        /// <summary>
         /// SqlDataSource1 control.
         /// </summary>
         /// <remarks>
@@ -191,5 +173,14 @@ namespace WebProjectV1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+        
+        /// <summary>
+        /// SqlDataSource2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource2;
     }
 }

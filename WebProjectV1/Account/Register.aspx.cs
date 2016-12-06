@@ -16,7 +16,7 @@ namespace WebProjectV1.Account
         {
             var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
             var signInManager = Context.GetOwinContext().Get<ApplicationSignInManager>();
-            var user = new ApplicationUser() { UserName = Email.Text, Email = Email.Text, FirstName = FirstName.Text, Surname = Surname.Text, DOB = Convert.ToDateTime(DOB.Text), AddressLine1 =Address1.Text, AddressLine2 = Address2.Text, AddressLine3 = Address3.Text, City = City.Text, County = DropDownCountys.SelectedValue };
+            var user = new ApplicationUser() { UserName = Email.Text, Email = Email.Text, FirstName = FirstName.Text, Surname = Surname.Text, DOB = Convert.ToDateTime(DOB.Text), AddressLine1 =Address1.Text, AddressLine2 = Address2.Text, AddressLine3 = Address3.Text, City = City.Text, County = DropDownCountys.SelectedItem.Text, Phone = Phone.Text, PostalCode = PostCode.Text };
             IdentityResult result = manager.Create(user, Password.Text);
             if (result.Succeeded)
             {

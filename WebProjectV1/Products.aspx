@@ -8,11 +8,11 @@
         <div class="form-group">
         <label class="control-label col-sm-2">Filter By</label>
         <div class="col-sm-5">
-            <asp:DropDownList ID="DropDownGenreFilter" ForeColor="Black" runat="server" DataSourceID="SqlDataSource2" DataTextField="Genre" DataValueField="Genre">
+            <asp:DropDownList ID="DropDownGenreFilter" ForeColor="Black" runat="server" DataSourceID="SqlDataSource2" DataTextField="Genre" DataValueField="Id" OnSelectedIndexChanged="DropDownGenreFilter_SelectedIndexChanged">
 
             </asp:DropDownList>
         </div>
-            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:SligoEntertainmentDBConnectionString %>" SelectCommand="SELECT DISTINCT [Genre] FROM [Products]"></asp:SqlDataSource>
+            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:SligoEntertainmentDBConnectionString %>" SelectCommand="SELECT * FROM [Genre]"></asp:SqlDataSource>
     </div>
     <div class="row">
         <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">

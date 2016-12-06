@@ -433,6 +433,10 @@
     <Compile Include="Migrations\201612051355361_added new customer columns.Designer.cs">
       <DependentUpon>201612051355361_added new customer columns.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201612061218384_added phone and postal code.cs" />
+    <Compile Include="Migrations\201612061218384_added phone and postal code.Designer.cs">
+      <DependentUpon>201612061218384_added phone and postal code.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CartItem.cs" />
     <Compile Include="Models\CartItemList.cs" />
@@ -486,6 +490,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201612051355361_added new customer columns.resx">
       <DependentUpon>201612051355361_added new customer columns.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612061218384_added phone and postal code.resx">
+      <DependentUpon>201612061218384_added phone and postal code.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

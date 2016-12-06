@@ -21,6 +21,8 @@ namespace WebProjectV1.Models
         public string AddressLine3 { get; set; }
         public string City { get; set; }
         public string County { get; set; }
+        public string PostalCode { get; set; }
+        public string Phone { get; set; }
 
         public ClaimsIdentity GenerateUserIdentity(ApplicationUserManager manager)
         {

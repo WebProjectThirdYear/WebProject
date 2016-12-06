@@ -95,10 +95,24 @@
                     CssClass="text-danger" ErrorMessage="The city field is required." />
             </div>
         </div>
+                    <div class="form-group">
+            <asp:Label runat="server" AssociatedControlID="PostCode" CssClass="col-md-2 control-label">Post Code</asp:Label>
+            <div class="col-md-10">
+                <asp:TextBox runat="server" ID="PostCode" CssClass="form-control"/>
+            </div>
+        </div>
                             <div class="form-group">
             <asp:Label runat="server" AssociatedControlID="DropDownCountys" CssClass="col-md-2 control-label">County</asp:Label>
             <div class="col-md-10">
                  <asp:DropDownList ID="DropDownCountys" ForeColor="Black" Font-Bold="true" Width="280" Height="40" runat="server" DataSourceID="SqlDataSource1" DataTextField="CountyName" DataValueField="Id"></asp:DropDownList>
+            </div>
+        </div>
+        <div class="form-group">
+            <asp:Label runat="server" AssociatedControlID="Phone" CssClass="col-md-2 control-label">Phone</asp:Label>
+            <div class="col-md-10">
+                <asp:TextBox runat="server" ID="Phone" CssClass="form-control"/>
+                <asp:RequiredFieldValidator runat="server" Display="Dynamic" ControlToValidate="Address3"
+                    CssClass="text-danger" ErrorMessage="The phone number is required." />
             </div>
         </div>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:SligoEntertainmentDBConnectionString %>" SelectCommand="SELECT * FROM [County]"></asp:SqlDataSource>

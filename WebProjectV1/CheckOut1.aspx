@@ -76,6 +76,13 @@
     </div>
 
     <div class="form-group">
+        <label class="control-label col-sm-2">Post Code</label>
+        <div class="col-sm-5">
+            <asp:TextBox ID="txtPostCode" runat="server" CssClass="form-control"></asp:TextBox>
+        </div>
+    </div>
+
+    <div class="form-group">
         <label class="control-label col-sm-2">County</label>
         <div class="col-sm-5">
             <asp:DropDownList ID="DropDownCountys" runat="server" ForeColor="Black" Font-Bold="true" Width="280" Height="40" DataSourceID="SqlDataSource2" DataTextField="CountyName" DataValueField="Id"></asp:DropDownList>

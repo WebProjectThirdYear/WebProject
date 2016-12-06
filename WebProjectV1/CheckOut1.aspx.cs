@@ -15,6 +15,11 @@ namespace WebProjectV1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                DropDownCountys.DataBind();
+            }
+
             if (!User.Identity.IsAuthenticated) // check if user is not logged in
             {
                 bool userLoggedIn = false;
@@ -40,8 +45,9 @@ namespace WebProjectV1
             Customer cust = new Customer();
             DataView aspUserTable = (DataView)
                 SqlDataSource1.Select(DataSourceSelectArguments.Empty);
-            //aspUserTable.RowFilter = 
-            //    "Email = '" + User.Identity.Name;   
+            aspUserTable.RowFilter =
+                string.Format("Email = '{0}'", User.Identity.Name);
+                //"Email = " + User.Identity.Name;   
             DataRowView row = aspUserTable[0];
 
            
@@ -53,6 +59,8 @@ namespace WebProjectV1
             cust.AddressLine3 = row["AddressLine3"].ToString();
             cust.City = row["City"].ToString();
             cust.County = row["County"].ToString();
+            cust.PostalCode = row["PostalCode"].ToString();
+            cust.Phone = row["Phone"].ToString();
 
             //populate fields in checkout1 page
 
@@ -63,7 +71,9 @@ namespace WebProjectV1
             txtAddress2.Text = cust.AddressLine2;
             txtAddress3.Text = cust.AddressLine3;
             txtCity.Text = cust.City;
-            DropDownCountys.SelectedValue = cust.County;
+            txtPostCode.Text = cust.PostalCode;
+            txtPhone.Text = cust.Phone;
+            DropDownCountys.SelectedItem.Text = cust.County;
 
         }
 

@@ -112,6 +112,15 @@ namespace WebProjectV1.Account {
         protected global::System.Web.UI.WebControls.TextBox City;
         
         /// <summary>
+        /// PostCode control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox PostCode;
+        
+        /// <summary>
         /// DropDownCountys control.
         /// </summary>
         /// <remarks>
@@ -119,6 +128,15 @@ namespace WebProjectV1.Account {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DropDownCountys;
+        
+        /// <summary>
+        /// Phone control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox Phone;
         
         /// <summary>
         /// SqlDataSource1 control.

@@ -23,6 +23,10 @@ namespace WebProjectV1.Models
 
         public string County { get; set; }
 
+        public string Phone { get; set; }
+
+        public string PostalCode { get; set; }
+
         // default ctr
         public Customer()
         {

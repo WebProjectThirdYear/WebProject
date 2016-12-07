@@ -13,6 +13,7 @@ namespace WebProjectV1
 {
     public partial class CheckOut1 : System.Web.UI.Page
     {
+        private delegate string CustomerDelegate(string s1, string s2);
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -79,8 +80,21 @@ namespace WebProjectV1
 
         protected void btnCheckOut_Click(object sender, EventArgs e)
         {
-            string url = ConfigurationManager.AppSettings["SecurePath"] + "CheckOut2.aspx";
-            Response.Redirect(url);
+                string url = ConfigurationManager.AppSettings["SecurePath"] + "CheckOut2.aspx";
+                CustomerDelegate d = new CustomerDelegate(CombineNames);
+                string CustomerName = PutTogether(d, txtFirstName.Text, txtLastName.Text);
+                Session["CustomerName"] = CustomerName;
+                Response.Redirect(url);
+        }
+
+        private string CombineNames(string s1, string s2)
+        {
+            return $"{s1} {s2}";
+        }
+
+        private string PutTogether(CustomerDelegate d, string s1, string s2)
+        {
+            return $"{d(s1, s2)}";
         }
 
         protected void btnCancel_Click(object sender, EventArgs e)

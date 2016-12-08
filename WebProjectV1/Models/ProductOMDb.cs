@@ -45,5 +45,13 @@ namespace WebProjectV1.Models
             Rating = (string)jProduct["imdbRating"];
             Poster = (string)jProduct["Poster"];
         }
+
+        public enum Genres
+        {
+            Comedy,
+            Action,
+            Adventure,
+            Drama
+        }
     }
 }

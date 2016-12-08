@@ -9,6 +9,8 @@ using System.Net;
 using WebProjectV1.Models;
 using System.Data.SqlClient;
 using System.Web.Configuration;
+using System.Web.ModelBinding;
+using static WebProjectV1.Models.ProductOMDb;
 
 namespace WebProjectV1
 {
@@ -24,5 +26,11 @@ namespace WebProjectV1
          
         }
 
-      }
+        //public IQueryable<ProductOMDb> Repeater1_GetData1([Control] Genres? DropDownList)
+        //{
+        //    ProductOMDb db = new ProductOMDb();
+        //    var query = db.Genre.Include(s => s.Enrollments.Select(e => e.Course));
+        //}
+
+    }
     }

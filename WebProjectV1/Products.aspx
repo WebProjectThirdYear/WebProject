@@ -15,7 +15,7 @@
             <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:SligoEntertainmentDBConnectionString %>" SelectCommand="SELECT * FROM [Genre]"></asp:SqlDataSource>
     </div>
     <div class="row">
-        <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
+        <asp:Repeater ID="Repeater1" SelectMethod="Repeater1_GetData1" runat="server" AllowSorting="true" DataSourceID="SqlDataSource1">
             <ItemTemplate>
                 <div class="col-sm-4">
                     <div class="thumbnail text-center">

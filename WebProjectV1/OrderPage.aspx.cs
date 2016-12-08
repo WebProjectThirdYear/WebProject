@@ -20,7 +20,9 @@ namespace WebProjectV1
             if (!IsPostBack)
             {
                 ddlProducts.DataBind();
-                //Master.AddCurrentPage("Home");
+
+                Master.AddBreadcrumbLink("/Default.aspx", "Home");
+                Master.AddCurrentPage("OrderPage");
             }
             // get and show product data on every load
             selectedProduct = this.GetSelectedProduct();

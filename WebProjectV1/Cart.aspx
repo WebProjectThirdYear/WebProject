@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Cart.aspx.cs" Inherits="WebProjectV1.Cart" %>
-
+<%@ MasterType VirtualPath="~/Site.Master" %>
 <asp:Content ID="mainContent" ContentPlaceHolderID="MainContent" runat="server">
 
      <header class="jumbotron">

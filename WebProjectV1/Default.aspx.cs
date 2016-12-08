@@ -18,6 +18,7 @@ namespace WebProjectV1
         {
             if (!IsPostBack)
             {
+                Master.AddCurrentPage("Home");
                 // declare connection string to read from our database
                 string connectionString = WebConfigurationManager.ConnectionStrings["SligoEntertainmentDBConnectionString"].ConnectionString;
                 SqlConnection myConnection = new SqlConnection(connectionString);

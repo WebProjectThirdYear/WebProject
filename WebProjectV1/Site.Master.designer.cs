@@ -13,6 +13,15 @@ namespace WebProjectV1 {
     public partial class SiteMaster {
         
         /// <summary>
+        /// navList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl navList;
+        
+        /// <summary>
         /// spanCount control.
         /// </summary>
         /// <remarks>
@@ -20,6 +29,15 @@ namespace WebProjectV1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl spanCount;
+        
+        /// <summary>
+        /// litBreadcrumb control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litBreadcrumb;
         
         /// <summary>
         /// MainContent control.

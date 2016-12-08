@@ -23,6 +23,8 @@ namespace WebProjectV1
 
             if(!IsPostBack)
             {
+                Master.AddBreadcrumbLink("/Default.aspx", "Home");
+                Master.AddCurrentPage("Cart");
                 this.DisplayCart();
                 CartCount();
             }            

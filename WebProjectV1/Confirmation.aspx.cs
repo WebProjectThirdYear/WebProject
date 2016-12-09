@@ -21,8 +21,10 @@ namespace WebProjectV1
 
         protected void btnContinue_Click(object sender, EventArgs e)
         {
+            cart = CartItemList.GetCart();
             string url = ConfigurationManager.AppSettings["UnSecurePath"] + "OrderPage.aspx";
             Session.Remove("CustomerName");
+            cart.Clear();
             Response.Redirect(url);
         }
     }

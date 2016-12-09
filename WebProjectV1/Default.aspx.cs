@@ -91,8 +91,7 @@ namespace WebProjectV1
                 return data;
             }
             catch (Exception)
-            {
-
+            {           
                 throw;
             }
 

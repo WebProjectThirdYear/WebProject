@@ -12,18 +12,18 @@
           height: 420px;
      }
 
-      .Team:after{
+      /*.Team:after{
           content:'';
           display: inline-block;
           width: 100%;
-      }
+      }*/
  </style>
     <div>
       <h1 style="text-align:center; border-bottom:double; padding-bottom:20px">About Us</h1>
  </div>
 
  <div style="margin-left:70px">
-     <asp:Image ID="ImgEntertainment" CssClass="ImgEntertainment" ImageUrl="~/Images/sligo.jpg" runat="server" />
+     <asp:Image ID="ImgEntertainment" CssClass="ImgEntertainment img-responsive" ImageUrl="~/Images/sligo.jpg" runat="server" />
      <div style="padding-top:20px">
          <p>The antecedents of Sligo Entertainments began in the 1890s at the dawn of the disc gramophone. By 1902 it had become the beginnings of the Gramophone Company. 
              In February 1907 they commenced the building of a new dedicated record factory at Hayes, Middlesex. Disc records were sold in music shops and independent retailers at this time. 
@@ -33,10 +33,27 @@
    <div style="padding-bottom:50px">
       <h1 style="text-align:center; border-bottom:double; border-top:double; padding-bottom:20px; padding-top:15px">Our Team</h1>
  </div>
-     <div class="Team">
-         <asp:Image ID="ImgTeam1" ImageUrl="~/Images/img1.jpg"  CssClass="TeamImg" runat="server" />
-         <asp:Image ID="ImgTeam2" ImageUrl="~/Images/img2.jpg"  CssClass="TeamImg" runat="server" />
-         <asp:Image ID="ImgTeam3" ImageUrl="~/Images/img3.jpg"  CssClass="TeamImg" runat="server" />
+     <div class="row">
+         <div class="col-md-4 col-xs-12">
+             <img class="img-circle" src="Images/img1.jpg" width="250" height="250" />
+             <p>CEO</p>
+             <p>Vanessa Foley</p>
+         </div>
+         <div class="col-md-4 col-xs-12">
+             <img class="img-circle" src="Images/img2.jpg" width="250" height="250" />
+             <p>Vice Chairperson</p>
+             <p>Gary Reynolds</p>
+         </div>
+         <div class="col-md-4 col-xs-12">
+             <img class="img-circle" src="Images/img3.jpg" width="250" height="250" />
+             <p>Co-Manager</p>
+             <p>Darragh McGowan</p>
+         </div>
      </div>
- </div>
+     <!--<div class="Team">
+         <asp:Image ID="ImgTeam1" ImageUrl="~/Images/img1.jpg"  CssClass="TeamImg img-responsive img-circle" runat="server" />
+         <asp:Image ID="ImgTeam2" ImageUrl="~/Images/img2.jpg"  CssClass="TeamImg img-responsive img-circle" runat="server" />
+         <asp:Image ID="ImgTeam3" ImageUrl="~/Images/img3.jpg"  CssClass="TeamImg img-responsive img-circle" runat="server" />
+     </div>-->
+    </div>
 </asp:Content>

@@ -18,14 +18,30 @@ namespace WebProjectV1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Master.AddBreadcrumbLink("/Default.aspx", "Home");
-            Master.AddCurrentPage("Products");
-           
+            if (!IsPostBack)
+            {
+                DropDownGenreFilter.Items.Add("ALL");
+                DropDownGenreFilter.SelectedIndex = 10;
+                GetAllProducts();                       
+                Master.AddBreadcrumbLink("/Default.aspx", "Home");
+                Master.AddCurrentPage("Products");          
+            }
+            
+
+
         }
 
         protected void DropDownGenreFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
-         
+            GetAllProducts();
+        }
+
+        private void GetAllProducts()
+        {
+            if (DropDownGenreFilter.SelectedItem.Text == "ALL")
+            {
+                SqlDataSource1.SelectCommand = "SELECT * FROM [Products]";
+            }
         }
 
         //public IQueryable<ProductOMDb> Repeater1_GetData1([Control] Genres? DropDownList)

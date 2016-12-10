@@ -33,15 +33,13 @@ namespace WebProjectV1
 
         protected void DropDownGenreFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
-            GetAllProducts();
+            if (DropDownGenreFilter.SelectedItem.Text == "ALL")
+                GetAllProducts();
         }
 
         private void GetAllProducts()
         {
-            if (DropDownGenreFilter.SelectedItem.Text == "ALL")
-            {
-                SqlDataSource1.SelectCommand = "SELECT * FROM [Products]";
-            }
+            SqlDataSource1.SelectCommand = "SELECT * FROM [Products]";
         }
 
         //public IQueryable<ProductOMDb> Repeater1_GetData1([Control] Genres? DropDownList)

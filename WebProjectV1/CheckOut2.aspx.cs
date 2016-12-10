@@ -68,19 +68,46 @@ namespace WebProjectV1
         private void InsertOrder()
         {
             cart = CartItemList.GetCart();
+            string connectionString = WebConfigurationManager.ConnectionStrings["SligoEntertainmentDBConnectionString"].ConnectionString;
+            SqlConnection myConnection = new SqlConnection(connectionString);
+            myConnection.Open();
 
-            SqlDataSource1.InsertParameters["CustomerID"].DefaultValue = User.Identity.Name;
-            SqlDataSource1.InsertParameters["Total"].DefaultValue = cart.TotalCost().ToString();
-            SqlDataSource1.InsertParameters["HasBeenShipped"].DefaultValue = "Y";
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = myConnection;
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.CommandText = "INSERT INTO Order(CustomerID, Total, HasBeenShipped) values (@CustomerID, @Total, @HasBeenShipped)";
 
-            try
+                cmd.Parameters.AddWithValue("@CustomerID", User.Identity.Name);
+                cmd.Parameters.AddWithValue("@Total", cart.TotalCost().ToString());
+                cmd.Parameters.AddWithValue("@HasBeenShipped", "true");
+
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                finally
+                {
+                    myConnection.Close();
+                }
+            }
+
+            //SqlDataSource1.InsertParameters["CustomerID"].DefaultValue = User.Identity.Name;
+            //SqlDataSource1.InsertParameters["Total"].DefaultValue = cart.TotalCost().ToString();
+            //SqlDataSource1.InsertParameters["HasBeenShipped"].DefaultValue = "True";
+
+            /*try
             {
                 SqlDataSource1.Insert();
             }
             catch (Exception)
             {
                 throw;
-            }
+            }*/
         }
 
         protected void btnCancel_Click(object sender, EventArgs e)

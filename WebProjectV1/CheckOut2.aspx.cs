@@ -76,7 +76,10 @@ namespace WebProjectV1
             {
                 cmd.Connection = myConnection;
                 cmd.CommandType = System.Data.CommandType.Text;
-                cmd.CommandText = "INSERT INTO Order(CustomerID, Total, HasBeenShipped) values (@CustomerID, @Total, @HasBeenShipped)";
+                cmd.CommandText = "INSERT INTO [dbo].[Order] ([CustomerID], [Total], [HasBeenShipped]) values (@CustomerID, @Total, @HasBeenShipped)";
+
+                /*cmd.CommandText = "insert into Order(CustomerID, Total, HasBeenShipped) values ("
+                + User.Identity.Name + "," + cart.TotalCost().ToString() + "," + "true" + ")";*/
 
                 cmd.Parameters.AddWithValue("@CustomerID", User.Identity.Name);
                 cmd.Parameters.AddWithValue("@Total", cart.TotalCost().ToString());

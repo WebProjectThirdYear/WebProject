@@ -50,7 +50,7 @@
             <asp:Parameter Name="Id" Type="Int32" />
         </UpdateParameters>
     </asp:SqlDataSource>
-
+    <div class="fb-page" data-href="https://www.facebook.com/hmv/" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/hmv/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/hmv/">HMV</a></blockquote></div>
     <script src="Scripts/owl.carousel.js"></script>
     <script>
         var randomMovieArray = ['Star Wars', 'Game of Thrones', 'Harry Potter', 'Lord of the Rings', 'Indiana Jones', 'Meet The Fockers', 'Dumb and Dumber'];

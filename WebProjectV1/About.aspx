@@ -11,7 +11,11 @@
           width:350px;
           height: 420px;
      }
-
+      #map {
+        width: 100%;
+        height: 400px;
+        background-color: grey;
+      }
       /*.Team:after{
           content:'';
           display: inline-block;
@@ -50,10 +54,28 @@
              <p>Darragh McGowan</p>
          </div>
      </div>
+     
+      <div id="map" class="embed-responsive"></div>
      <!--<div class="Team">
          <asp:Image ID="ImgTeam1" ImageUrl="~/Images/img1.jpg"  CssClass="TeamImg img-responsive img-circle" runat="server" />
          <asp:Image ID="ImgTeam2" ImageUrl="~/Images/img2.jpg"  CssClass="TeamImg img-responsive img-circle" runat="server" />
          <asp:Image ID="ImgTeam3" ImageUrl="~/Images/img3.jpg"  CssClass="TeamImg img-responsive img-circle" runat="server" />
      </div>-->
     </div>
+    <script>
+      function initMap() {
+          var lnglat = { lat: 54.271728, lng: -8.476311 }; //setting co-ordinates
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 10,
+          center: lnglat
+        });
+        var marker = new google.maps.Marker({
+          position: lnglat, //applys position to map
+          map: map
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC18iUwB1wQka_RXQfRDNqURoZclDz_P6Q&callback=initMap"> <%--API key --%>
+    </script>
 </asp:Content>

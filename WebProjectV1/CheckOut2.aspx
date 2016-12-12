@@ -48,7 +48,7 @@
     <div class="form-group">
         <label class="control-label col-sm-2">Expiration date:</label>
         <div class="col-sm-5">
-            <asp:TextBox ID="txtExpiration" runat="server" CssClass="form-control" TextMode="DateTime"></asp:TextBox>
+            <asp:TextBox ID="txtExpiration" runat="server" CssClass="form-control" TextMode="Date"></asp:TextBox>
         </div>
         <div class="col-sm-5">
             <asp:RequiredFieldValidator ID="rfvExpiration" runat="server" 

@@ -28,7 +28,7 @@ namespace WebProjectV1
         {
             string url = ConfigurationManager.AppSettings["UnSecurePath"] + "Confirmation.aspx";
             InsertOrder();
-            //InsertOrderDetails();
+            InsertOrderDetails();
             Response.Redirect(url);
 
         }
@@ -37,30 +37,29 @@ namespace WebProjectV1
         private void InsertOrderDetails()
         {
             cart = CartItemList.GetCart();
-
             string connectionString = WebConfigurationManager.ConnectionStrings["SligoEntertainmentDBConnectionString"].ConnectionString;
             SqlConnection myConnection = new SqlConnection(connectionString);
-            cart = CartItemList.GetCart();
+            myConnection.Open();
 
-            //string commandText = "INSERT INTO [OrderDetails] ([OrderID], [ProductID], [Quantity], [UnitPrice]) VALUES (@Id, @OrderID, @ProductID, @Quantity, @UnitPrice) FROM [OrderDetails] INNER JOIN [Order] ON Order.Customer =;" + User.Identity.Name;
-
-            string commandText = string.Format("INSERT INTO [OrderDetails] ([OrderID]) VALUES ({0}) FROM [OrderDetails] INNER JOIN [Order] ON Order.Customer = {1}", "Order.Id", User.Identity.Name);
-
-            SqlCommand cmd = new SqlCommand(commandText, myConnection);
-
-            cmd.Parameters.Add("@OrderID");
-            /*SqlDataSource1.InsertParameters["OrderID"].DefaultValue = UserData[0];
-            SqlDataSource1.InsertParameters["ProductID"].DefaultValue = UserData[1];
-            SqlDataSource1.InsertParameters["Quantity"].DefaultValue = UserData[2];
-            SqlDataSource1.InsertParameters["UnitPrice"].DefaultValue = score.ToString();*/
-
-            try
+            using (SqlCommand cmd = new SqlCommand())
             {
-                SqlDataSource2.Insert();
-            }
-            catch (Exception)
-            {
-                throw;
+                cmd.Connection = myConnection;
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.CommandText = string.Format("INSERT INTO [dbo].[OrderDetails] ([OrderID]) VALUES ({0}) SELECT Id FROM [dbo].[OrderDetails] INNER JOIN [dbo].[Order] ON [dbo].[Order].CustomerID = {1}", "[dbo].[Order].Id", User.Identity.Name);
+
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                finally
+                {
+                    myConnection.Close();
+                }
+
             }
         }
 
@@ -77,9 +76,6 @@ namespace WebProjectV1
                 cmd.Connection = myConnection;
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.CommandText = "INSERT INTO [dbo].[Order] ([CustomerID], [Total], [HasBeenShipped]) values (@CustomerID, @Total, @HasBeenShipped)";
-
-                /*cmd.CommandText = "insert into Order(CustomerID, Total, HasBeenShipped) values ("
-                + User.Identity.Name + "," + cart.TotalCost().ToString() + "," + "true" + ")";*/
 
                 cmd.Parameters.AddWithValue("@CustomerID", User.Identity.Name);
                 cmd.Parameters.AddWithValue("@Total", cart.TotalCost().ToString());
@@ -98,19 +94,6 @@ namespace WebProjectV1
                     myConnection.Close();
                 }
             }
-
-            //SqlDataSource1.InsertParameters["CustomerID"].DefaultValue = User.Identity.Name;
-            //SqlDataSource1.InsertParameters["Total"].DefaultValue = cart.TotalCost().ToString();
-            //SqlDataSource1.InsertParameters["HasBeenShipped"].DefaultValue = "True";
-
-            /*try
-            {
-                SqlDataSource1.Insert();
-            }
-            catch (Exception)
-            {
-                throw;
-            }*/
         }
 
         protected void btnCancel_Click(object sender, EventArgs e)

@@ -54,6 +54,8 @@
              <p>Darragh McGowan</p>
          </div>
      </div>
+     <div style="padding-bottom:50px">
+      <h1 style="text-align:center; border-bottom:double; border-top:double; padding-bottom:20px; padding-top:15px">Our Location</h1>
      
       <div id="map" class="embed-responsive"></div>
      <!--<div class="Team">
@@ -78,4 +80,5 @@
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC18iUwB1wQka_RXQfRDNqURoZclDz_P6Q&callback=initMap"> <%--API key --%>
     </script>
+    </div>
 </asp:Content>

@@ -49,11 +49,15 @@
             <asp:Parameter Name="Year" Type="String" />
             <asp:Parameter Name="Id" Type="Int32" />
         </UpdateParameters>
-    </asp:SqlDataSource>
-    <div class="fb-page" data-href="https://www.facebook.com/hmv/" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/hmv/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/hmv/">HMV</a></blockquote></div>
+    </asp:SqlDataSource>  
+    <hr />
+
+    <div class="row">
+        <div class="fb-page col-md-2 col-lg-2 col-sm-2 col-xs-2 col-md-offset-4 col-lg-offset-4 col-sm-offset-3 col-xs-12 embed-responsive embed-responsive-16by9" style="width:600px;" data-href="https://www.facebook.com/hmv/" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/hmv/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/hmv/">HMV</a></blockquote></div> 
+    </div>
     <script src="Scripts/owl.carousel.js"></script>
     <script>
-        var randomMovieArray = ['Star Wars', 'Game of Thrones', 'Harry Potter', 'Lord of the Rings', 'Indiana Jones', 'Meet The Fockers', 'Dumb and Dumber'];
+        //var randomMovieArray = ['Star Wars', 'Game of Thrones', 'Harry Potter', 'Lord of the Rings', 'Indiana Jones', 'Meet The Fockers', 'Dumb and Dumber'];
 
         $("#owl-demo").owlCarousel({
             autoPlay: 3000,
@@ -62,7 +66,7 @@
             itemsDesktopSmall: [979, 3]
         });
 
-        // pull down data from OMDb API
+        /*// pull down data from OMDb API
         function apiCall() {
             $("div.item").each(function (i) {
                 var randomNumber = Math.floor((Math.random() * randomMovieArray.length - 1) + 1);
@@ -80,7 +84,7 @@
                 })(i);
             });
         }
-        apiCall();
+        apiCall();*/
 
     </script>
 </asp:Content>

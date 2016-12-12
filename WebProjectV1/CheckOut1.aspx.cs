@@ -81,19 +81,23 @@ namespace WebProjectV1
         protected void btnCheckOut_Click(object sender, EventArgs e)
         {
                 string url = ConfigurationManager.AppSettings["SecurePath"] + "CheckOut2.aspx";
-                CustomerDelegate d = new CustomerDelegate(CombineNames);
+                //create the delegate
+                CustomerDelegate d = new CustomerDelegate(Combine);
                 string CustomerName = PutTogether(d, txtFirstName.Text, txtLastName.Text);
+                //put the customer name in session to be used in confirmation page
                 Session["CustomerName"] = CustomerName;
                 Response.Redirect(url);
         }
 
-        private string CombineNames(string s1, string s2)
+        private string Combine(string s1, string s2)
         {
+            // combines the first name and last name together
             return $"{s1} {s2}";
         }
 
         private string PutTogether(CustomerDelegate d, string s1, string s2)
         {
+            //using the delegate to put them together 
             return $"{d(s1, s2)}";
         }
 

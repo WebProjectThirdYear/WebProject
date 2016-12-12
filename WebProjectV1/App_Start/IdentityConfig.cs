@@ -7,16 +7,53 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using WebProjectV1.Models;
+using SendGrid;
+using System.Net;
+using System.Configuration;
+using System.Diagnostics;
+using WebProjectV1;
 
 namespace WebProjectV1
 {
     public class EmailService : IIdentityMessageService
     {
-        public Task SendAsync(IdentityMessage message)
+        public async Task SendAsync(IdentityMessage message)
         {
             // Plug in your email service here to send an email.
-            return Task.FromResult(0);
+            await SendGridConfiguration(message);
         }
+
+        private async Task SendGridConfiguration(IdentityMessage message)
+        {
+            var myMessage = new SendGridMessage();
+            myMessage.AddTo(message.Destination);
+            myMessage.From = new System.Net.Mail.MailAddress(
+                                "Dave1633@live.com", "Sligo Entertainments");
+            myMessage.Subject = message.Subject;
+            myMessage.Text = message.Body;
+            myMessage.Html = message.Body;
+
+            var usercredentials = new NetworkCredential(
+                 ConfigurationManager.AppSettings["emailServiceUserName"],
+                 ConfigurationManager.AppSettings["emailServicePassword"]
+                 );
+
+            // Create a Web transport for sending email.
+            var transportWeb = new Web(usercredentials);
+
+            // Send the email.
+            if (transportWeb != null)
+            {
+                await transportWeb.DeliverAsync(myMessage);
+            }
+            else
+            {
+                Trace.TraceError("Failed to create Web transport.");
+                await Task.FromResult(0);
+            }
+        }
+
+    }
     }
 
     public class SmsService : IIdentityMessageService
@@ -99,4 +136,3 @@ namespace WebProjectV1
             return new ApplicationSignInManager(context.GetUserManager<ApplicationUserManager>(), context.Authentication);
         }
     }
-}

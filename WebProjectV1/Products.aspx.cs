@@ -27,14 +27,14 @@ namespace WebProjectV1
                 Master.AddCurrentPage("Products");          
             }
             
-
+            
 
         }
 
         protected void DropDownGenreFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (DropDownGenreFilter.SelectedItem.Text == "ALL")
-                GetAllProducts();
+                GetAllProducts(); 
         }
 
         private void GetAllProducts()
@@ -42,11 +42,24 @@ namespace WebProjectV1
             SqlDataSource1.SelectCommand = "SELECT * FROM [Products]";
         }
 
-        //public IQueryable<ProductOMDb> Repeater1_GetData1([Control] Genres? DropDownList)
-        //{
-        //    ProductOMDb db = new ProductOMDb();
-        //    var query = db.Genre.Include(s => s.Enrollments.Select(e => e.Course));
-        //}
+        protected void Repeater1_ItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+          
+        }
 
+        protected void Repeater1_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+
+            /* attempt at trying to get the movie title when buy now is clicked 
+            and then setting dropdown list index in order page to be that movie*/
+
+            //if (e.Item.ItemType == ListItemType.Item
+            //              || e.Item.ItemType == ListItemType.AlternatingItem)
+            //{
+            //    Button b = e.Item.FindControl("btnAdd") as Button;
+            //    DataRowView drv = e.Item.DataItem as DataRowView;
+            //    Session["movie"] = (string)drv.Row["ProductName"];
+            //}
+        }
     }
     }
